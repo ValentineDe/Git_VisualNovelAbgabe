@@ -24,6 +24,13 @@ namespace VisualNovel {
   // **** DATA THAT WILL BE SAVED (GAME PROGRESS) ****
   export let dataForSave = {
     nameProtagonist: "",
+    sceneHaus: false,
+    sceneDorfplatz: false,
+    sceneGasthaus: false,
+
+    //Options
+    heilerOption: false,
+    seherinOption: false,
     // aisakaScore: 0,
     // scoreForAisaka: "",
     // randomPoints: 0,
@@ -35,11 +42,14 @@ namespace VisualNovel {
 
 
   window.addEventListener("load", start);
+ // text pace: pauses used by ticker between letters and before a paragraph in milliseconds
+ ƒS.Speech.setTickerDelays(25, 100);
+
   function start(_event: Event): void {
 
-    // //menu
-     gameMenu = ƒS.Menu.create(inGameMenuButtons, buttonFunctionalities, "gameMenuCSSclass");
-     buttonFunctionalities("Close");
+    //menu
+     gameMenu = ƒS.Menu.create(inGameMenuButtons, buttonFunctionalities, "gameMenu");
+    
    
     // **** SCENE HIERARCHY ****
     let scenes: ƒS.Scenes = [
@@ -50,7 +60,11 @@ namespace VisualNovel {
       // { scene: HowToMakeAMeterBar, name: "Meter bar" },
 
       // The id field of "next" must be filled with the id of the next wished scene to play
-      { id: "Dorfplatz", scene: Dorfplatz, name: "Dorfplatz", next: "gasthaus"},
+      { id: "Dorfplatz", scene: Dorfplatz, name: "Dorfplatz"},
+      { id: "Gasthaus", scene: Gasthaus, name: "Gasthaus"},
+      { id: "Haus", scene: Haus, name: "Haus"},
+      
+      
 
 
 
