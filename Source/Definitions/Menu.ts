@@ -57,16 +57,18 @@ namespace VisualNovel {
           menuIsOpen = true;
         }
         break;
-      // Inventory shortcuts
-      case ƒ.KEYBOARD_CODE.I:
-        console.log("open inventory");
-        await ƒS.Inventory.open();
-        break;
-      case ƒ.KEYBOARD_CODE.ESC:
-        console.log("close inventory");
-        await ƒS.Inventory.open();
-        ƒS.Inventory.close();
-        break;
+
+
+    //   // Inventory shortcuts
+    //   case ƒ.KEYBOARD_CODE.I:
+    //     console.log("open inventory");
+    //     await ƒS.Inventory.open();
+    //     break;
+    //   case ƒ.KEYBOARD_CODE.ESC:
+    //     console.log("close inventory");
+    //     await ƒS.Inventory.open();
+    //     ƒS.Inventory.close();
+    //     break;
     }
   }
 }

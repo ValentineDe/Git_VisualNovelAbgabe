@@ -1,26 +1,5 @@
 namespace VisualNovel {
 
-    //   // **** LOCATIONS ****
-    //   export let locations = {
-    //     bedroomAtNight: {
-    //       name: "Bedroom in night mode",
-    //       background: "Images/Backgrounds/Bedroom_Night.png"
-    //     },
-    //     bathroom: {
-    //       name: "Bathroom",
-    //       background: "Images/Backgrounds/Bathroom.png"
-    //     },
-    //     bathroomFoggy: {
-    //       name: "Bathroom foggy",
-    //       background: "Images/Backgrounds/Bathroom_Foggy.png"
-    //     },
-    //     radio: {
-    //       name: "Radio",
-    //       background: "Images/Backgrounds/radio.png"
-    //       // foreground: "Images/Backgrounds/radio.png"
-    //     }
-    //   };
-
     export let locations = {
         aushang: {
             name: "Aushang",
@@ -62,10 +41,14 @@ namespace VisualNovel {
             background: "./Images/Backgrounds/haus.png",
         },
 
+        dorfSchutz: {
+            name: "Dorf unter Kuppel",
+            background: "./Images/Backgrounds/dorf_schutz.png",
+        },
+
         vertreibung: {
             name: "Dorfbewohner wütend",
             background: "./Images/Backgrounds/vertreibung.png",
-        },
-
-    }
-};
+        }
+    };
+}

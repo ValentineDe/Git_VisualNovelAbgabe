@@ -3,7 +3,7 @@ namespace VisualNovel {
         console.log("Haus");
 
         // actual location
-        dataForSave.sceneHaus = true;
+        //dataForSave.sceneHaus = true;
 
         // background 
         await ƒS.Location.show(locations.hausAlte);

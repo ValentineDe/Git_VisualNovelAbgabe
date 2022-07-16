@@ -1,12 +1,25 @@
+namespace VisualNovel {
   // **** ITEMS ****
   // items is declared here as well as initialized
   export let items = {
-    blobRED: {
-      name: "Blob Red",
-      description: "A reddish something",
-      image: "Images/Items/blobRED.png",
-      static: true
+    
+    pudel: {
+      name: "pudel",
+      origin: ƒS.ORIGIN.CENTER,
+      pose: {
+        speechbubble: "./Images/Items/pudel.png",
+      }
     },
+
+    rostigesSchwert: {
+      name: "rostigesSchwert",
+      origin: ƒS.ORIGIN.CENTER,
+      pose: {
+        speechbubble: "./Images/Items/rostiges_Schwert.png",
+      }
+    },
+    
+
     blobBU: {
       name: "Blob Blue",
       description: "A blueish something",
@@ -38,3 +51,4 @@
       image: "Images/Items/blobOG.png"
     }
   };
+}

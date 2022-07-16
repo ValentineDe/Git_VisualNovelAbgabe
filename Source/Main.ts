@@ -1,20 +1,3 @@
-// namespace Template {
-//   export import ƒ = FudgeCore;
-//   export import ƒS = FudgeStory;
-
-//   console.log("FudgeStory template starting");
-
-//   window.addEventListener("load", start);
-//   function start(_event: Event): void {
-//     let scenes: ƒS.Scenes = [
-//       { scene: Scene, name: "Scene" }
-//     ];
-
-//     // start the sequence
-//     ƒS.Progress.go(scenes);
-//   }
-// }
-
 namespace VisualNovel {
   export import ƒ = FudgeCore;
   export import ƒS = FudgeStory;
@@ -24,26 +7,22 @@ namespace VisualNovel {
   // **** DATA THAT WILL BE SAVED (GAME PROGRESS) ****
   export let dataForSave = {
     nameProtagonist: "",
-    sceneHaus: false,
-    sceneDorfplatz: false,
-    sceneGasthaus: false,
+    
+    // sceneHaus: false,
+    // sceneDorfplatz: false,
+    // sceneGasthaus: false,
 
-    //Options
+    //Story Options
     heilerOption: false,
     seherinOption: false,
-    // aisakaScore: 0,
-    // scoreForAisaka: "",
-    // randomPoints: 0,
-    // pickedAnimationScene: false,
-    // pickedInventoryScene: false,
-    // pickedMeterScene: false,
-    // pickedChoice: false
+    wolfshundOption: false,
+    spionageOption: false,
+    schwertOption: false,
+    anklageOption: false,
   };
 
 
   window.addEventListener("load", start);
- // text pace: pauses used by ticker between letters and before a paragraph in milliseconds
- ƒS.Speech.setTickerDelays(25, 100);
 
   function start(_event: Event): void {
 
@@ -53,29 +32,26 @@ namespace VisualNovel {
    
     // **** SCENE HIERARCHY ****
     let scenes: ƒS.Scenes = [
-      { scene: Intro, name: "Intro" },
-      // { scene: HowToMakeChoices, name: "Choices" },
-     // { scene: HowToMakeChoices2, name: "Choices" },
-      // { scene: HowToMakeARadio, name: "Radio" },
-      // { scene: HowToMakeAMeterBar, name: "Meter bar" },
+      { scene: Dorfplatz, name: "Intro" },
 
       // The id field of "next" must be filled with the id of the next wished scene to play
       { id: "Dorfplatz", scene: Dorfplatz, name: "Dorfplatz"},
       { id: "Gasthaus", scene: Gasthaus, name: "Gasthaus"},
       { id: "Haus", scene: Haus, name: "Haus"},
+    
+      // // Branching paths (Results)
+      { id: "Schutzzauber", scene: Schutzzauber, name: "This is a good result" },
+      { id: "Suche", scene: Suche, name: "This is a good result"},
+      { id: "Unfall", scene: Unfall, name: "This is a bad result"},
+      { id: "Vertreibung", scene: Suche, name: "This is a bad result"},
+
+      // // Branching paths (Endings)
+      { id: "BadEnding", scene: BadEnding, name: "This is a bad ending", next: "EndOfNovel"},
+      { id: "HappyEnding", scene: BadEnding, name: "This is a good ending", next: "EndOfNovel"},
+      { id: "TryAgain", scene: BadEnding, name: "You get a new Chance", next: "Intro"},
       
-      
-
-
-
-      // { id: "Inventory Scene", scene: HowToMakeAnInventory, name: "Inventory", next: "Bad Ending" },
-
-      // // Branching paths
-      // { id: "Good Ending", scene: GoodEnding, name: "This is a good ending", next: "Empty Scene" },
-      // { id: "Bad Ending", scene: BadEnding, name: "This is a bad ending", next: "Empty Scene" },
-
       // // Empty ending scene to stop the program
-      // { id: "Empty Scene", scene: Empty, name: "END" }
+      { id: "EndOfNovel", scene: EndOfNovel, name: "END" },
 
     ];
 
